@@ -1,4 +1,5 @@
 import React from "react"
+import Masonry from "react-masonry-css"
 import { Container, Card, Col, Row } from "react-bootstrap"
 import data from "../data.json"
 
@@ -13,13 +14,19 @@ Array.from(container.children).forEach((child, i) => {
   colHeights[order] += parseFloat(child.clientHeight)
 })
 container.style.height = Math.max(...colHeights) + "px"*/
-
-function Gallery() {
+//windowWidth > 1024 ? HeroImageDesktop : windowWidth > 576 ? HeroImageTablet : HeroImageMobile}
+const breakpointColumnsObj = {
+  default: 4,
+  laptop: 3,
+  tablet: 2,
+  mobile: 1
+}
+function Gallery({ windowWidth }) {
   return (
     <Container className="">
-      <Row xs={1} md={2} lg={4} className=" g-4 mt-2" style={{ maxHeight: "900px" }}>
+      <Masonry breakpointCols={windowWidth > 700 ? breakpointColumnsObj.default : windowWidth > 500 ? breakpointColumnsObj.tablet : breakpointColumnsObj.mobile} className="my-masonry-grid d-flex flex-row" columnClassName="my-masonry-grid_column">
         {data.map((item, index) => (
-          <Col key={index} className="width-25">
+          <Col key={index} className="">
             <Card className="" bsPrefix="card">
               <Card.Img src={item.images.thumbnail} bsPrefix="card-img " className="" />
               <Card.ImgOverlay className="text-light h-100  d-flex justify-content-end align-items-start flex-column " bsPrefix="card-img-overlay">
@@ -31,7 +38,7 @@ function Gallery() {
             </Card>
           </Col>
         ))}
-      </Row>
+      </Masonry>
     </Container>
   )
 }
