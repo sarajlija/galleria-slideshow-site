@@ -21,9 +21,7 @@ const breakpointColumnsObj = {
   tablet: 2,
   mobile: 1
 }
-function Gallery({ windowWidth }) {
-  return (
-    <Container className="">
+/* <Container className="">
       <Masonry breakpointCols={windowWidth > 700 ? breakpointColumnsObj.default : windowWidth > 500 ? breakpointColumnsObj.tablet : breakpointColumnsObj.mobile} className="my-masonry-grid d-flex flex-row" columnClassName="my-masonry-grid_column">
         {data.map((item, index) => (
           <Col key={index} className="">
@@ -39,6 +37,22 @@ function Gallery({ windowWidth }) {
           </Col>
         ))}
       </Masonry>
+        </Container>*/
+
+function Gallery({ windowWidth }) {
+  return (
+    <Container>
+      {data.map((item, index) => (
+        <div key={index} className="box">
+          <img src={item.images.thumbnail} bsPrefix="card-img " className="" />
+          <div className="card-img-overlay" bsPrefix="card-img-overlay">
+            <p className="fs-4 fw-bold">{item.name}</p>
+            <p className="opacity-75" style={{ fontSize: "13px" }}>
+              {item.artist.name}
+            </p>
+          </div>
+        </div>
+      ))}
     </Container>
   )
 }
