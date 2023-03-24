@@ -2,11 +2,13 @@ import { useState, useEffect } from "react"
 import "./App.css"
 import Header from "./components/Header"
 import Gallery from "./components/Gallery"
-import { BrowserRouter } from "react-router-dom"
+
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 import SlideShow from "./components/SlideShow"
+import { useGlobalContext } from "./context"
 function App() {
-  const [state, setState] = useState(true)
+  const { startSlide } = useGlobalContext()
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
   useEffect(() => {
@@ -24,7 +26,7 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-      <Gallery windowWidth={windowWidth} />
+      {startSlide ? <Gallery windowWidth={windowWidth} /> : <SlideShow />}
     </BrowserRouter>
   )
 }

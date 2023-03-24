@@ -161,6 +161,7 @@
       "gallery": "./assets/lady-with-an-ermine/gallery.jpg"
     }
   },
+
   {
     "name": "The Night Café",
     "year": 1888,
@@ -177,6 +178,25 @@
         "large": "./assets/the-night-cafe/hero-large.jpg"
       },
       "gallery": "./assets/the-night-cafe/gallery.jpg"
+    }
+  },
+
+  {
+    "name": "Mona Lisa",
+    "year": 1503,
+    "description": "The Mona Lisa (/ˌmoʊnə ˈliːsə/; italian: La Gioconda [la dʒoˈkonda] or Monna Lisa [ˈmɔnna ˈliːza]) is a half-length portrait painting by Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world\". The painting's novel qualities include the subject's enigmatic expression, the monumentality of the composition, the subtle modelling of forms, and the atmospheric illusionism.",
+    "source": "https://en.wikipedia.org/wiki/Mona_Lisa",
+    "artist": {
+      "image": "./assets/mona-lisa/artist.jpg",
+      "name": "Leonardo da Vinci"
+    },
+    "images": {
+      "thumbnail": "./assets/mona-lisa/thumbnail.jpg",
+      "hero": {
+        "small": "./assets/mona-lisa/hero-small.jpg",
+        "large": "./assets/mona-lisa/hero-large.jpg"
+      },
+      "gallery": "./assets/mona-lisa/gallery.jpg"
     }
   },
   {
@@ -234,21 +254,21 @@
     }
   },
   {
-    "name": "Mona Lisa",
-    "year": 1503,
-    "description": "The Mona Lisa (/ˌmoʊnə ˈliːsə/; italian: La Gioconda [la dʒoˈkonda] or Monna Lisa [ˈmɔnna ˈliːza]) is a half-length portrait painting by Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world\". The painting's novel qualities include the subject's enigmatic expression, the monumentality of the composition, the subtle modelling of forms, and the atmospheric illusionism.",
-    "source": "https://en.wikipedia.org/wiki/Mona_Lisa",
+    "name": "The Swing",
+    "year": 1767,
+    "description": "The painting depicts an elegant young woman on a swing. A smiling young man, hiding in the bushes on the left, watches her from a vantage point that allows him to see up into her billowing dress, where his arm is pointed with hat in hand. A smiling older man, who is nearly hidden in the shadows on the right, propels the swing with a pair of ropes. The older man appears to be unaware of the young man. As the young lady swings high, she throws her left leg up, allowing her dainty shoe to fly through the air.",
+    "source": "https://en.wikipedia.org/wiki/The_Swing_(Fragonard)",
     "artist": {
-      "image": "./assets/mona-lisa/artist.jpg",
-      "name": "Leonardo da Vinci"
+      "image": "#",
+      "name": ""
     },
     "images": {
-      "thumbnail": "./assets/mona-lisa/thumbnail.jpg",
+      "thumbnail": "",
       "hero": {
-        "small": "./assets/mona-lisa/hero-small.jpg",
-        "large": "./assets/mona-lisa/hero-large.jpg"
+        "small": "./assets/the-swing/hero-small.jpg",
+        "large": "./assets/the-swing/hero-large.jpg"
       },
-      "gallery": "./assets/mona-lisa/gallery.jpg"
+      "gallery": "./assets/the-swing/gallery.jpg"
     }
   },
   {

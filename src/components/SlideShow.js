@@ -1,7 +1,9 @@
 import React from "react"
+import { Container } from "react-bootstrap"
+import ModalGallery from "./ModalGallery"
 
 function SlideShow() {
-  return <div>SlideShow</div>
+  return <Container className="text-dark">SLIDESHOW</Container>
 }
 
 export default SlideShow

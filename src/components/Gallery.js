@@ -1,7 +1,8 @@
 import React from "react"
 import Masonry from "react-masonry-css"
-import { Container, Card, Col, Row } from "react-bootstrap"
+import { Container, Card, Col } from "react-bootstrap"
 import data from "../data.json"
+import { useGlobalContext } from "../context"
 
 console.log(data)
 /*
@@ -21,11 +22,15 @@ const breakpointColumnsObj = {
   tablet: 2,
   mobile: 1
 }
-/* <Container className="">
-      <Masonry breakpointCols={windowWidth > 700 ? breakpointColumnsObj.default : windowWidth > 500 ? breakpointColumnsObj.tablet : breakpointColumnsObj.mobile} className="my-masonry-grid d-flex flex-row" columnClassName="my-masonry-grid_column">
+
+function Gallery({ windowWidth }) {
+  const { handleShow } = useGlobalContext()
+  return (
+    <Container className="">
+      <Masonry breakpointCols={windowWidth > 1024 ? breakpointColumnsObj.default : windowWidth > 768 ? breakpointColumnsObj.laptop : breakpointColumnsObj.mobile} className="my-masonry-grid d-flex flex-row" columnClassName="my-masonry-grid_column">
         {data.map((item, index) => (
           <Col key={index} className="">
-            <Card className="" bsPrefix="card">
+            <Card className="border-0" bsPrefix="card">
               <Card.Img src={item.images.thumbnail} bsPrefix="card-img " className="" />
               <Card.ImgOverlay className="text-light h-100  d-flex justify-content-end align-items-start flex-column " bsPrefix="card-img-overlay">
                 <Card.Title className="fs-4 fw-bold">{item.name}</Card.Title>
@@ -37,22 +42,6 @@ const breakpointColumnsObj = {
           </Col>
         ))}
       </Masonry>
-        </Container>*/
-
-function Gallery({ windowWidth }) {
-  return (
-    <Container>
-      {data.map((item, index) => (
-        <div key={index} className="box">
-          <img src={item.images.thumbnail} bsPrefix="card-img " className="" />
-          <div className="card-img-overlay" bsPrefix="card-img-overlay">
-            <p className="fs-4 fw-bold">{item.name}</p>
-            <p className="opacity-75" style={{ fontSize: "13px" }}>
-              {item.artist.name}
-            </p>
-          </div>
-        </div>
-      ))}
     </Container>
   )
 }

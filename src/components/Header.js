@@ -1,16 +1,23 @@
 import React from "react"
-import { Navbar, Container } from "react-bootstrap"
-
+import { Navbar, Container, Button } from "react-bootstrap"
+import { useGlobalContext } from "../context"
 function Header() {
+  const { startSlide, handleCloseSlide, handleOpenSlide } = useGlobalContext()
   return (
     <Navbar>
       <Container>
         <Navbar.Brand href="#home">Galleries</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
-          <Navbar.Text>
-            <a href="#login"> START SLIDESHOW</a>
-          </Navbar.Text>
+          {startSlide ? (
+            <Button variant="outline-dark" onClick={() => handleOpenSlide()}>
+              START SLIDESHOW
+            </Button>
+          ) : (
+            <Button variant="outline-dark" onClick={() => handleCloseSlide()}>
+              CLOSE SLIDESHOW
+            </Button>
+          )}
         </Navbar.Collapse>
       </Container>
     </Navbar>
