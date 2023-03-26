@@ -27,6 +27,7 @@ function Gallery({ windowWidth }) {
   const { handleShow } = useGlobalContext()
   return (
     <Container className="">
+      <hr />
       <Masonry breakpointCols={windowWidth > 1024 ? breakpointColumnsObj.default : windowWidth > 768 ? breakpointColumnsObj.laptop : breakpointColumnsObj.mobile} className="my-masonry-grid d-flex flex-row" columnClassName="my-masonry-grid_column">
         {data.map((item, index) => (
           <Col key={index} className="">
