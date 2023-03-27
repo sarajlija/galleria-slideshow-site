@@ -6,7 +6,7 @@ import ModalGallery from "./ModalGallery"
 function SlideShow() {
   return (
     <Container fluid className="text-dark flex-column  d-flex justify-content-center align-items-center">
-      <Carousel interval={null} className="">
+      <Carousel interval={1000} className="">
         {dataslideshow.map((slide, index) => (
           <Carousel.Item key={index}>
             <Row>
