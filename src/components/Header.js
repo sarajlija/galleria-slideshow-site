@@ -4,7 +4,7 @@ import { useGlobalContext } from "../context"
 function Header() {
   const { startSlide, handleCloseSlide, handleOpenSlide } = useGlobalContext()
   return (
-    <Container>
+    <Container fluid>
       <Navbar>
         <Container>
           <Navbar.Brand href="#home">galleria.</Navbar.Brand>

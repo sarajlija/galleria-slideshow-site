@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: "Libre Baskerville", serif;
 }
+
 /*HEADER*/
 .navbar-brand {
   margin: 0;
@@ -49,10 +50,69 @@ hr {
   justify-content: center;
   align-items: center;
   flex-direction: column;*/
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.5s ease-in-out;
   cursor: pointer;
 }
 .card-img-overlay:hover {
-  opacity: 0.8;
+  opacity: 0.4;
+}
+
+/*SLIDESHOW*/
+.carousel-item {
+  margin: 100px 0 75px 0;
+}
+.card-body__slideshow {
+  width: 410px;
+  background-color: #ffffff;
+  padding: 0 48px 35px 48px;
+  position: absolute;
+  right: -260px;
+  z-index: 2;
+}
+
+.card-title {
+  font-size: 56px;
+  text-transform: capitalize;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.card-img {
+  width: 100%;
+  height: auto;
+}
+.img__artist {
+  position: absolute;
+  bottom: -80px;
+  right: -160px;
+  width: 128px;
+}
+.card__slide {
+  border: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.card-text__slide {
+  position: absolute;
+  background-color: transparent;
+  z-index: 1;
+  font-size: 14px;
+  width: 350px;
+  top: 115px;
+  right: 0;
+  /* padding: 180px 30px 30px 200px;*/
+}
+
+.card-text__year {
+  font-size: 10rem;
+  left: 175px;
+  top: -38px;
+  opacity: 0.1;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  display: none;
 }

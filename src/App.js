@@ -24,10 +24,10 @@ function App() {
   })
   console.log(windowWidth)
   return (
-    <BrowserRouter>
+    <>
       <Header />
       {startSlide ? <Gallery windowWidth={windowWidth} /> : <SlideShow />}
-    </BrowserRouter>
+    </>
   )
 }
 
