@@ -59,6 +59,9 @@ hr {
 }
 
 /*SLIDESHOW*/
+.carousel {
+  width: 90%;
+}
 .carousel-item {
   margin: 100px 0 75px 0;
 }
@@ -67,7 +70,7 @@ hr {
   background-color: #ffffff;
   padding: 0 48px 35px 48px;
   position: absolute;
-  right: -260px;
+  right: -230px;
   z-index: 2;
 }
 
@@ -100,7 +103,7 @@ hr {
   background-color: transparent;
   z-index: 1;
   font-size: 14px;
-  width: 350px;
+  width: 330px;
   top: 115px;
   right: 0;
   /* padding: 180px 30px 30px 200px;*/
@@ -108,7 +111,7 @@ hr {
 
 .card-text__year {
   font-size: 10rem;
-  left: 175px;
+  left: 210px;
   top: -38px;
   opacity: 0.1;
 }
