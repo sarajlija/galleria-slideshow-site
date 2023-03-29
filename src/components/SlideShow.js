@@ -5,8 +5,8 @@ import ModalGallery from "./ModalGallery"
 
 function SlideShow() {
   return (
-    <Container fluid className="text-dark flex-column  d-flex justify-content-center align-items-center">
-      <Carousel interval={1000} className="">
+    <Container className="text-dark    ">
+      <Carousel interval={null} className="">
         {dataslideshow.map((slide, index) => (
           <Carousel.Item key={index}>
             <Row>
@@ -30,24 +30,17 @@ function SlideShow() {
                 </Card>
               </Col>
             </Row>
+            <Row>
+              <Col>
+                <Navbar bsPrefix="navbar-galleria">
+                  <Card.Title>{slide.name}</Card.Title>
+                  <Card.Text>{slide.artist.name}</Card.Text>
+                </Navbar>
+              </Col>
+            </Row>
           </Carousel.Item>
-        ))}{" "}
-      </Carousel>{" "}
-      <Row>
-        <Col>
-          <Navbar>
-            <Container>
-              <Navbar.Brand href="#home">galleria.</Navbar.Brand>
-              <Navbar.Toggle />
-              <Navbar.Collapse className="justify-content-end">
-                <Button variant="outline-dark">START SLIDESHOW</Button>
-
-                <Button variant="outline-dark">CLOSE SLIDESHOW</Button>
-              </Navbar.Collapse>
-            </Container>
-          </Navbar>
-        </Col>
-      </Row>
+        ))}
+      </Carousel>
     </Container>
   )
 }

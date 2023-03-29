@@ -46,10 +46,7 @@ hr {
   position: absolute;
   width: 100%;
   height: 100%;
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;*/
+
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
   cursor: pointer;
@@ -60,7 +57,7 @@ hr {
 
 /*SLIDESHOW*/
 .carousel {
-  width: 90%;
+  width: 95%;
 }
 .carousel-item {
   margin: 100px 0 75px 0;
@@ -115,7 +112,56 @@ hr {
   top: -38px;
   opacity: 0.1;
 }
-.carousel-control-prev,
+
+.carousel-control-next,
+.carousel-control-prev {
+  position: relative;
+  display: inline;
+  float: right;
+  padding: 0;
+  margin-right: -60px;
+  margin-top: 30px;
+  color: #fff;
+  height: -moz-fit-content;
+  /* height: auto; */
+  border: 0;
+  opacity: 0.5;
+  transition: opacity 0.15s ease;
+}
+
+.carousel-control-prev {
+  left: 0;
+}
+
 .carousel-control-next {
-  display: none;
+  left: 0;
+}
+
+.carousel-indicators {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-right: 15%;
+  margin-bottom: 1rem;
+  margin-left: 15%;
+  list-style: none;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("/public/assets/shared/icon-next-button.svg") !important;
+}
+
+.carousel-control-next-icon {
+  background-image: url("/public/assets/shared/icon-back-button.svg") !important;
+}
+
+.navbar-galleria {
+  width: 100%;
+  bottom: -10rem;
+  position: absolute;
 }
