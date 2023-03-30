@@ -4,6 +4,9 @@ body {
   margin: 0;
   font-family: "Libre Baskerville", serif;
 }
+.container {
+  width: 95%;
+}
 
 /*HEADER*/
 .navbar-brand {
@@ -46,7 +49,6 @@ hr {
   position: absolute;
   width: 100%;
   height: 100%;
-
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
   cursor: pointer;
@@ -57,13 +59,13 @@ hr {
 
 /*SLIDESHOW*/
 .carousel {
-  width: 95%;
+  width: 100%;
 }
 .carousel-item {
   margin: 100px 0 75px 0;
 }
 .card-body__slideshow {
-  width: 410px;
+  width: 420px;
   background-color: #ffffff;
   padding: 0 48px 35px 48px;
   position: absolute;
@@ -108,33 +110,30 @@ hr {
 
 .card-text__year {
   font-size: 10rem;
-  left: 210px;
+  left: 180px;
   top: -38px;
   opacity: 0.1;
 }
 
 .carousel-control-next,
 .carousel-control-prev {
-  position: relative;
-  display: inline;
-  float: right;
   padding: 0;
-  margin-right: -60px;
-  margin-top: 30px;
-  color: #fff;
-  height: -moz-fit-content;
+  background-color: transparent;
+  top: 44rem;
+  position: absolute;
   /* height: auto; */
+  width: 4rem;
   border: 0;
   opacity: 0.5;
   transition: opacity 0.15s ease;
 }
 
 .carousel-control-prev {
-  left: 0;
+  left: 60rem;
 }
 
 .carousel-control-next {
-  left: 0;
+  right: 0;
 }
 
 .carousel-indicators {
@@ -151,17 +150,39 @@ hr {
   margin-left: 15%;
   list-style: none;
 }
-
-.carousel-control-prev-icon {
-  background-image: url("/public/assets/shared/icon-next-button.svg") !important;
+.carousel-inner {
+  height: 55rem;
 }
-
-.carousel-control-next-icon {
+.carousel-control-prev-icon {
   background-image: url("/public/assets/shared/icon-back-button.svg") !important;
 }
 
-.navbar-galleria {
+.carousel-control-next-icon {
+  background-image: url("/public/assets/shared/icon-next-button.svg") !important;
+}
+
+.card-galleria {
+  color: #000000;
   width: 100%;
-  bottom: -10rem;
   position: absolute;
+  bottom: -7rem;
+}
+.card-title__galleria {
+  font-size: 26px;
+}
+.card-text__galleria {
+  font-size: 14px;
+}
+
+.btn-dark {
+  width: 152px;
+  position: absolute;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  margin-left: 16px;
+  padding: 14px 0;
+  bottom: 0;
+  border-radius: 0;
+  letter-spacing: 1px;
+  font-size: 10px;
 }

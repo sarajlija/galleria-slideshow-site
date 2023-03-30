@@ -1,11 +1,14 @@
-import React from "react"
-import { Container, Carousel, Col, Row, Button, Navbar, Image, Card } from "react-bootstrap"
+import React, { useState } from "react"
+import { Container, Carousel, Col, Row, Button, Modal, Card, Image } from "react-bootstrap"
 import dataslideshow from "../dataslideshow.json"
-import ModalGallery from "./ModalGallery"
 
 function SlideShow() {
+  const [show, setShow] = useState(false)
+
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
   return (
-    <Container className="text-dark    ">
+    <Container className="text-dark">
       <Carousel interval={null} className="">
         {dataslideshow.map((slide, index) => (
           <Carousel.Item key={index}>
@@ -19,23 +22,26 @@ function SlideShow() {
                   </Card.Body>
                   <Card.Img src={slide.artist.image} alt="Card image" bsPrefix="img__artist" />
                 </Card>
-              </Col>
+                {/*MODAL */}
 
+                <Button variant="dark" onClick={handleShow}>
+                  <Image src="../assets/shared/view-image.png" alt="view image" className="me-5" />
+                  view image
+                </Button>
+
+                {/*END MODAL */}
+                <Card bsPrefix="card-galleria">
+                  <Card.Title bsPrefix="card-title__galleria">{slide.name}</Card.Title>
+                  <Card.Text bsPrefix="card-text__galleria">{slide.artist.name}</Card.Text>
+                </Card>
+              </Col>
               <Col>
-                <Card className=" text-dark " bsPrefix="card__slide">
+                <Card className=" text-dark" bsPrefix="card__slide">
                   <Card.Text bsPrefix="card-text__slide opacity-100">{slide.description}</Card.Text>
                 </Card>{" "}
                 <Card bsPrefix="card__slide">
                   <Card.Text bsPrefix="card-text__year position-absolute">{slide.year}</Card.Text>
                 </Card>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <Navbar bsPrefix="navbar-galleria">
-                  <Card.Title>{slide.name}</Card.Title>
-                  <Card.Text>{slide.artist.name}</Card.Text>
-                </Navbar>
               </Col>
             </Row>
           </Carousel.Item>
