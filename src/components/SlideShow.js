@@ -2,11 +2,11 @@ import React, { useState } from "react"
 import { Container, Carousel, Col, Row, Button, Modal, Card, Image } from "react-bootstrap"
 import dataslideshow from "../dataslideshow.json"
 
-function SlideShow() {
-  const [show, setShow] = useState(false)
+import { useGlobalContext } from "../context"
 
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
+function SlideShow() {
+  const { show, handleClose, handleShow } = useGlobalContext()
+
   return (
     <Container className="text-dark">
       <Carousel interval={null} className="">
@@ -22,14 +22,20 @@ function SlideShow() {
                   </Card.Body>
                   <Card.Img src={slide.artist.image} alt="Card image" bsPrefix="img__artist" />
                 </Card>
-                {/*MODAL */}
-
                 <Button variant="dark" onClick={handleShow}>
                   <Image src="../assets/shared/view-image.png" alt="view image" className="me-5" />
                   view image
                 </Button>
 
-                {/*END MODAL */}
+                <Modal show={show} onHide={handleClose}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Modal heading</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <Image fluid src={dataslideshow[0].images.gallery} />
+                  </Modal.Body>
+                </Modal>
+
                 <Card bsPrefix="card-galleria">
                   <Card.Title bsPrefix="card-title__galleria">{slide.name}</Card.Title>
                   <Card.Text bsPrefix="card-text__galleria">{slide.artist.name}</Card.Text>

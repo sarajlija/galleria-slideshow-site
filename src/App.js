@@ -7,6 +7,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 import SlideShow from "./components/SlideShow"
 import { useGlobalContext } from "./context"
+import ModalGallery from "./components/ModalGallery"
+
 function App() {
   const { startSlide } = useGlobalContext()
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
@@ -27,6 +29,7 @@ function App() {
     <>
       <Header />
       {startSlide ? <Gallery windowWidth={windowWidth} /> : <SlideShow />}
+      <ModalGallery />
     </>
   )
 }

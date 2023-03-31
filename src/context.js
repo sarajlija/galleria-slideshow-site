@@ -12,15 +12,10 @@ const AppProvider = ({ children }) => {
   const [show, setShow] = useState(false)
 
   const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
-
-  /*MODAL
-  const [showModal, setShowModal] = useState(false)
-  console.log(showModal)
-
-  const handleCloseModal = () => setShowModal(false)
-  const handleShowModal = () => setShowModal(true)
-
+  const handleShow = () => {
+    setShow(true)
+  }
+  /*
   const toggleIsClose = () => {
     setIsOpenSearch(true)
     setSugestionCityData([])
