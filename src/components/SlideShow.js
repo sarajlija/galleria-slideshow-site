@@ -28,13 +28,12 @@ function SlideShow() {
                   view image
                 </Button>
                 {selectedSlide && (
-                  <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton>
-                      <Modal.Title>Modal heading</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                      <Image fluid src={selectedSlide} />
-                    </Modal.Body>
+                  <Modal show={show} onHide={handleClose} class=" ">
+                    <Button onClick={handleClose} className=" position-absolute right-0">
+                      Close
+                    </Button>
+
+                    <Image fluid src={selectedSlide} />
                   </Modal>
                 )}
                 <Card bsPrefix="card-galleria">
