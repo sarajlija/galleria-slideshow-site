@@ -10,10 +10,11 @@ const AppProvider = ({ children }) => {
     setStartSlide(true)
   }
   const [show, setShow] = useState(false)
-
+  const [selectedSlide, setSelectedSlide] = useState(null)
   const handleClose = () => setShow(false)
-  const handleShow = () => {
+  const handleShow = slide => {
     setShow(true)
+    setSelectedSlide(slide.images.gallery)
   }
   /*
   const toggleIsClose = () => {
@@ -53,7 +54,8 @@ const AppProvider = ({ children }) => {
         show,
         setShow,
         handleClose,
-        handleShow
+        handleShow,
+        selectedSlide
       }}
     >
       {children}

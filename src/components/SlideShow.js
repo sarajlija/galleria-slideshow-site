@@ -5,7 +5,7 @@ import dataslideshow from "../dataslideshow.json"
 import { useGlobalContext } from "../context"
 
 function SlideShow() {
-  const { show, handleClose, handleShow } = useGlobalContext()
+  const { show, handleClose, handleShow, selectedSlide } = useGlobalContext()
 
   return (
     <Container className="text-dark">
@@ -22,20 +22,21 @@ function SlideShow() {
                   </Card.Body>
                   <Card.Img src={slide.artist.image} alt="Card image" bsPrefix="img__artist" />
                 </Card>
-                <Button variant="dark" onClick={handleShow}>
+
+                <Button variant="dark" onClick={() => handleShow(slide)}>
                   <Image src="../assets/shared/view-image.png" alt="view image" className="me-5" />
                   view image
                 </Button>
-
-                <Modal show={show} onHide={handleClose}>
-                  <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
-                  </Modal.Header>
-                  <Modal.Body>
-                    <Image fluid src={dataslideshow[0].images.gallery} />
-                  </Modal.Body>
-                </Modal>
-
+                {selectedSlide && (
+                  <Modal show={show} onHide={handleClose}>
+                    <Modal.Header closeButton>
+                      <Modal.Title>Modal heading</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                      <Image fluid src={selectedSlide} />
+                    </Modal.Body>
+                  </Modal>
+                )}
                 <Card bsPrefix="card-galleria">
                   <Card.Title bsPrefix="card-title__galleria">{slide.name}</Card.Title>
                   <Card.Text bsPrefix="card-text__galleria">{slide.artist.name}</Card.Text>
