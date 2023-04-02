@@ -10,8 +10,8 @@ function SlideShow() {
   return (
     <Container className="text-dark">
       <Carousel interval={null} className="">
-        {dataslideshow.map((slide, index) => (
-          <Carousel.Item key={index}>
+        {dataslideshow.map(slide => (
+          <Carousel.Item key={slide.images.gallery}>
             <Row>
               <Col>
                 <Card className="border-0 ">
