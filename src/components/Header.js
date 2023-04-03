@@ -11,11 +11,11 @@ function Header() {
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             {startSlide ? (
-              <Button variant="outline-dark" onClick={() => handleOpenSlide()}>
+              <Button variant="outline-dark rounded-0" onClick={() => handleOpenSlide()}>
                 START SLIDESHOW
               </Button>
             ) : (
-              <Button variant="outline-dark" onClick={() => handleCloseSlide()}>
+              <Button variant="outline-dark rounded-0" onClick={() => handleCloseSlide()}>
                 CLOSE SLIDESHOW
               </Button>
             )}

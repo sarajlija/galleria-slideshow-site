@@ -1,7 +1,27 @@
-import React, { useState, useContext } from "react"
+import React, { useState, useContext, useEffect } from "react"
 
 const AppContext = React.createContext()
 const AppProvider = ({ children }) => {
+  /*RESIZE WINDOW*/
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+  const breakpointColumnsObj = {
+    default: 4,
+    laptop: 3,
+    tablet: 2,
+    mobile: 1
+  }
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth)
+    }
+
+    window.addEventListener("resize", handleWindowResize)
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize)
+    }
+  })
+  /*RESIZE WINDOW*/
   const [startSlide, setStartSlide] = useState(true)
   const handleOpenSlide = () => {
     setStartSlide(false)
@@ -55,7 +75,9 @@ const AppProvider = ({ children }) => {
         setShow,
         handleClose,
         handleShow,
-        selectedSlide
+        selectedSlide,
+        windowWidth,
+        breakpointColumnsObj
       }}
     >
       {children}

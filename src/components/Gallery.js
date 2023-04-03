@@ -16,19 +16,14 @@ Array.from(container.children).forEach((child, i) => {
 })
 container.style.height = Math.max(...colHeights) + "px"*/
 //windowWidth > 1024 ? HeroImageDesktop : windowWidth > 576 ? HeroImageTablet : HeroImageMobile}
-const breakpointColumnsObj = {
-  default: 4,
-  laptop: 3,
-  tablet: 2,
-  mobile: 1
-}
 
-function Gallery({ windowWidth }) {
-  const { handleShow } = useGlobalContext()
+function Gallery() {
+  const { windowWidth, breakpointColumnsObj } = useGlobalContext()
   return (
-    <Container className="">
+    <>
       <hr />
-      <Masonry breakpointCols={windowWidth > 1024 ? breakpointColumnsObj.default : windowWidth > 768 ? breakpointColumnsObj.laptop : breakpointColumnsObj.mobile} className="my-masonry-grid d-flex flex-row" columnClassName="my-masonry-grid_column">
+
+      <Masonry breakpointCols={windowWidth > 1024 ? breakpointColumnsObj.default : windowWidth > 576 ? breakpointColumnsObj.tablet : breakpointColumnsObj.mobile} className="my-masonry-grid d-flex flex-row" columnClassName="my-masonry-grid_column">
         {data.map((item, index) => (
           <Col key={index} className="">
             <Card className="border-0" bsPrefix="card">
@@ -43,7 +38,7 @@ function Gallery({ windowWidth }) {
           </Col>
         ))}
       </Masonry>
-    </Container>
+    </>
   )
 }
 

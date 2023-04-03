@@ -58,12 +58,7 @@ hr {
 }
 
 /*SLIDESHOW*/
-.carousel {
-  width: 100%;
-}
-.carousel-item {
-  margin: 100px 0 75px 0;
-}
+
 .card-body__slideshow {
   width: 420px;
   background-color: #ffffff;
@@ -85,8 +80,8 @@ hr {
 }
 .img__artist {
   position: absolute;
-  bottom: -80px;
-  right: -160px;
+  bottom: -60px;
+  right: -200px;
   width: 128px;
 }
 .card__slide {
@@ -114,22 +109,29 @@ hr {
   top: -38px;
   opacity: 0.1;
 }
+/*CAROUSEL*/
 
+.carousel-item {
+  margin: 100px 0 100px 0;
+}
 .carousel-control-next,
 .carousel-control-prev {
-  padding: 0;
-  background-color: transparent;
-  top: 44rem;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  background-color: #ffffff;
+  bottom: 0;
   position: absolute;
-  /* height: auto; */
   width: 4rem;
-  border: 0;
+
+  border: 0px;
   opacity: 0.5;
-  transition: opacity 0.15s ease;
+  transition: opacity 0.15s ease 0s;
 }
 
 .carousel-control-prev {
-  left: 60rem;
+  left: 0;
 }
 
 .carousel-control-next {
@@ -142,7 +144,7 @@ hr {
   bottom: 0;
   left: 0;
   z-index: -1;
-  display: flex;
+  display: none;
   justify-content: center;
   padding: 0;
   margin-right: 15%;
@@ -151,7 +153,8 @@ hr {
   list-style: none;
 }
 .carousel-inner {
-  height: 55rem;
+  height: 100%;
+  overflow: visible;
 }
 .carousel-control-prev-icon {
   background-image: url("/public/assets/shared/icon-back-button.svg") !important;
@@ -164,10 +167,12 @@ hr {
 .card-galleria {
   color: #000000;
   width: 100%;
-  position: absolute;
-  bottom: -7rem;
+  top: 4rem;
+  position: relative;
+  z-index: 1;
 }
 .card-title__galleria {
+  margin-top: 2rem;
   font-size: 26px;
 }
 .card-text__galleria {
@@ -181,8 +186,26 @@ hr {
   margin-bottom: 14px;
   margin-left: 16px;
   padding: 14px 0;
-  bottom: 0;
+  bottom: 137px;
   border-radius: 0;
   letter-spacing: 1px;
   font-size: 10px;
+}
+.btn-dark:hover {
+  color: #ffffff;
+}
+
+/*MEDIA QUERY*/
+@media (max-width: 992px) {
+  .carousel-item {
+    margin: 40px 0 40px 0;
+  }
+  .card-text__year {
+    left: -30px;
+    top: 0;
+  }
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 576px) {
 }

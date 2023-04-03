@@ -8,28 +8,19 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import SlideShow from "./components/SlideShow"
 import { useGlobalContext } from "./context"
 import ModalGallery from "./components/ModalGallery"
+import { Container } from "react-bootstrap"
 
 function App() {
-  const { startSlide } = useGlobalContext()
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+  const { startSlide, windowWidth, breakpointColumnsObj } = useGlobalContext()
 
-  useEffect(() => {
-    const handleWindowResize = () => {
-      setWindowWidth(window.innerWidth)
-    }
-
-    window.addEventListener("resize", handleWindowResize)
-
-    return () => {
-      window.removeEventListener("resize", handleWindowResize)
-    }
-  })
   console.log(windowWidth)
   return (
     <>
-      <Header />
-      {startSlide ? <Gallery windowWidth={windowWidth} /> : <SlideShow />}
-      <ModalGallery />
+      <Container fluid className="px-5">
+        <Header />
+        {startSlide ? <Gallery /> : <SlideShow />}
+        <ModalGallery />
+      </Container>
     </>
   )
 }
