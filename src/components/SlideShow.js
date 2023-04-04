@@ -8,9 +8,9 @@ function SlideShow() {
   const { show, handleClose, handleShow, selectedSlide, windowWidth, breakpointColumnsObj } = useGlobalContext()
 
   return (
-    <Carousel className="text-dark overflow-hiden" interval={null}>
+    <Carousel className="text-dark " interval={null}>
       {dataslideshow.map(slide => (
-        <Carousel.Item key={slide.images.gallery}>
+        <Carousel.Item key={slide.images.gallery} className="">
           <Row>
             <Col>
               <Card className="border-0 ">
@@ -44,7 +44,7 @@ function SlideShow() {
               </Card>
             </Col>
           </Row>{" "}
-          <Row>
+          <Row className="vh-40 d-flex align-items-center justify-content-start">
             <Col>
               <Card bsPrefix="card-galleria ">
                 <Card.Title bsPrefix="card-title__galleria">{slide.name}</Card.Title>

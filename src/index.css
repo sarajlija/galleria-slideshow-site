@@ -111,33 +111,43 @@ hr {
 }
 /*CAROUSEL*/
 
+.carousel {
+  max-width: 1200px;
+  height: 1000px;
+  margin: 0 auto;
+  overflow-y: hidden;
+}
+
 .carousel-item {
   margin: 100px 0 100px 0;
 }
+/*
 .carousel-control-next,
 .carousel-control-prev {
   padding: 0px;
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  background-color: #ffffff;
+  background-color: transparent;
   bottom: 0;
   position: absolute;
   width: 4rem;
-
+  top: 50rem;
   border: 0px;
   opacity: 0.5;
   transition: opacity 0.15s ease 0s;
-}
-
+}**/
 .carousel-control-prev {
-  left: 0;
-}
+  position: absolute;
+  left: 80%;
+  height: 0;
+  top: 95vh;
 
+  /* right: 0; */
+}
 .carousel-control-next {
+  position: absolute;
   right: 0;
+  height: 0;
+  top: 95vh;
 }
-
 .carousel-indicators {
   position: absolute;
   right: 0;
@@ -153,8 +163,7 @@ hr {
   list-style: none;
 }
 .carousel-inner {
-  height: 100%;
-  overflow: visible;
+  height: auto;
 }
 .carousel-control-prev-icon {
   background-image: url("/public/assets/shared/icon-back-button.svg") !important;
@@ -166,10 +175,8 @@ hr {
 
 .card-galleria {
   color: #000000;
+  margin-top: 4rem;
   width: 100%;
-  top: 4rem;
-  position: relative;
-  z-index: 1;
 }
 .card-title__galleria {
   margin-top: 2rem;

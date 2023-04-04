@@ -42,5 +42,8 @@
   },
   "devDependencies": {
     "json-loader": "^0.5.7"
+  },
+  "resolutions": {
+    "autoprefixer": "10.4.5"
   }
 }
