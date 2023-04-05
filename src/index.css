@@ -61,10 +61,12 @@ hr {
 
 .card-body__slideshow {
   width: 420px;
+  top: 0;
   background-color: #ffffff;
-  padding: 0 48px 35px 48px;
+  padding: 0 48px 35px 40px;
   position: absolute;
-  right: -230px;
+  left: 24rem;
+  right: 12rem;
   z-index: 2;
 }
 
@@ -80,8 +82,9 @@ hr {
 }
 .img__artist {
   position: absolute;
-  bottom: -60px;
-  right: -200px;
+  top: 30rem;
+  bottom: 0;
+  right: 23rem;
   width: 128px;
 }
 .card__slide {
@@ -105,23 +108,25 @@ hr {
 
 .card-text__year {
   font-size: 10rem;
-  left: 180px;
-  top: -38px;
+  margin-left: 220px;
+
   opacity: 0.1;
+}
+.source-link {
+  margin-top: 61px;
+  color: #7d7d7d;
 }
 /*CAROUSEL*/
 
 .carousel {
   max-width: 1200px;
-  height: 1000px;
-  margin: 0 auto;
-  overflow-y: hidden;
+  height: auto;
 }
-
+/*
 .carousel-item {
   margin: 100px 0 100px 0;
 }
-/*
+
 .carousel-control-next,
 .carousel-control-prev {
   padding: 0px;
@@ -136,17 +141,30 @@ hr {
 }**/
 .carousel-control-prev {
   position: absolute;
-  left: 80%;
-  height: 0;
-  top: 95vh;
-
+  left: 90%;
+  height: auto;
+  display: flex;
+  align-items: end;
   /* right: 0; */
+  width: fit-content;
 }
 .carousel-control-next {
   position: absolute;
   right: 0;
-  height: 0;
-  top: 95vh;
+  height: auto;
+  display: flex;
+  align-items: end;
+  width: fit-content;
+}
+
+.carousel-control-next {
+  position: absolute;
+  right: 0;
+  height: auto;
+  display: flex;
+  align-items: end;
+  /* margin: 0; */
+  width: fit-content;
 }
 .carousel-indicators {
   position: absolute;
@@ -165,6 +183,9 @@ hr {
 .carousel-inner {
   height: auto;
 }
+.navbar-light {
+  margin: 80px 0;
+}
 .carousel-control-prev-icon {
   background-image: url("/public/assets/shared/icon-back-button.svg") !important;
 }
@@ -179,19 +200,20 @@ hr {
   width: 100%;
 }
 .card-title__galleria {
-  margin-top: 2rem;
   font-size: 26px;
+  margin: 0;
 }
 .card-text__galleria {
   font-size: 14px;
+  margin: 0;
 }
 
 .btn-dark {
   width: 152px;
-  position: absolute;
   text-transform: uppercase;
   margin-bottom: 14px;
   margin-left: 16px;
+  margin-top: -6rem;
   padding: 14px 0;
   bottom: 137px;
   border-radius: 0;
@@ -204,15 +226,76 @@ hr {
 
 /*MEDIA QUERY*/
 @media (max-width: 992px) {
-  .carousel-item {
-    margin: 40px 0 40px 0;
-  }
   .card-text__year {
-    left: -30px;
-    top: 0;
+    margin-left: -30px;
+  }
+  .card-text__slide {
+    top: 50px;
+  }
+  .source-link {
+    margin-top: 31px;
+  }
+  .navbar-light {
+    margin: 1rem 0;
+  }
+  .img__artist {
+    position: absolute;
+    top: 23rem;
+    bottom: 0;
+    right: 15rem;
+    width: 128px;
   }
 }
 @media (max-width: 768px) {
+  .img__artist {
+    bottom: 0;
+    right: 0px;
+    margin-top: -6rem;
+    position: relative;
+  }
+  .card__image {
+    display: flex;
+    gap: 1rem;
+    position: relative;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+  .card-body__slideshow {
+    width: 420px;
+    right: -8rem;
+    left: 14rem;
+    background-color: #ffffff;
+    padding: 0 48px 35px 40px;
+    position: absolute;
+
+    z-index: 2;
+  }
+  .btn-dark {
+    margin-top: 5rem;
+    position: relative;
+  }
+  .card-text__slide {
+    position: absolute;
+    background-color: transparent;
+    z-index: 1;
+    font-size: 14px;
+    /* width: 330px; */
+    top: 0px;
+    right: 0;
+    /* padding: 180px 30px 30px 200px; */
+  }
+  .opacity-100 {
+    opacity: 1 !important;
+  }
+  .opacity-100 {
+    opacity: 1 !important;
+  }
+  .carousel-control-prev {
+    left: 85;
+  }
 }
 @media (max-width: 576px) {
+  .carousel-control-prev {
+    left: 75%;
+  }
 }
