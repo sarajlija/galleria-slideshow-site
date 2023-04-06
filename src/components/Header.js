@@ -8,14 +8,13 @@ function Header() {
       <Navbar>
         <Container>
           <Navbar.Brand href="#home">galleria.</Navbar.Brand>
-          <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             {startSlide ? (
-              <Button variant="outline-dark rounded-0" onClick={() => handleOpenSlide()}>
+              <Button bsPrefix="btn__header" onClick={() => handleOpenSlide()}>
                 START SLIDESHOW
               </Button>
             ) : (
-              <Button variant="outline-dark rounded-0" onClick={() => handleCloseSlide()}>
+              <Button bsPrefix="btn__header" onClick={() => handleCloseSlide()}>
                 CLOSE SLIDESHOW
               </Button>
             )}

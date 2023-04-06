@@ -12,19 +12,21 @@ function SlideShow() {
       {dataslideshow.map(slide => (
         <Carousel.Item key={slide.images.gallery} className="">
           <Row>
-            <Col sm={12} md={6}>
-              <Card className="border-0" bsPrefix="card__image">
-                <Card.Img src={windowWidth > 768 ? slide.images.hero.large : slide.images.hero.small} alt={slide.name} />
-                <Card.Img src={slide.artist.image} alt="Card image" bsPrefix="img__artist" />
-                <Card.Body className=" text-dark border-0" bsPrefix="card-body__slideshow">
-                  <Card.Title>{slide.name}</Card.Title>
-                </Card.Body>
-              </Card>
-
+            <Col sm={12} md={6} className="col__hero">
+              <Image fluid src={windowWidth > 768 ? slide.images.hero.large : slide.images.hero.small} alt={slide.name} bsPrefix="img__hero" />
+              <Image fluid src={slide.artist.image} alt="Card image" bsPrefix="img__artist" />
               <Button variant="dark" onClick={() => handleShow(slide)}>
                 <Image src="../assets/shared/view-image.png" alt="view image" className="me-2" />
                 view image
-              </Button>
+              </Button>{" "}
+              <Card className="border-0" bsPrefix="card__name">
+                <Card.Body>
+                  <Card.Title className=" text-dark " bsPrefix="">
+                    {slide.name}
+                  </Card.Title>
+                  <Card.Text className=" text-dark ">{slide.artist.name}</Card.Text>
+                </Card.Body>
+              </Card>{" "}
               {selectedSlide && (
                 <Modal show={show} onHide={handleClose} centered>
                   <Button onClick={handleClose} style={{ top: "-2rem", fontSize: "1.1rem" }} className=" position-absolute end-0  rounded-0 bg-transparent border-0  ">
