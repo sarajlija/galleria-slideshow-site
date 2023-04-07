@@ -21,7 +21,7 @@ const AppProvider = ({ children }) => {
       window.removeEventListener("resize", handleWindowResize)
     }
   })
-  /*RESIZE WINDOW*/
+  /*RW*/
   const [startSlide, setStartSlide] = useState(true)
   const handleOpenSlide = () => {
     setStartSlide(false)

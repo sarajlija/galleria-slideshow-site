@@ -1,6 +1,6 @@
 import React from "react"
 import Masonry from "react-masonry-css"
-import { Container, Card, Col } from "react-bootstrap"
+import { Card, Col } from "react-bootstrap"
 import data from "../data.json"
 import { useGlobalContext } from "../context"
 

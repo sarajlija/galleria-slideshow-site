@@ -5,12 +5,12 @@ import dataslideshow from "../dataslideshow.json"
 import { useGlobalContext } from "../context"
 
 function SlideShow() {
-  const { show, handleClose, handleShow, selectedSlide, windowWidth, breakpointColumnsObj } = useGlobalContext()
+  const { show, handleClose, handleShow, selectedSlide, windowWidth } = useGlobalContext()
 
   return (
-    <Carousel className="text-dark mb-5 " interval={null}>
+    <Carousel className="text-dark mb-5 " interval={2000}>
       {dataslideshow.map(slide => (
-        <Carousel.Item key={slide.images.gallery} className="">
+        <Carousel.Item key={slide.images.gallery}>
           <Row>
             <Col sm={12} md={6} className="col__hero">
               <Image fluid src={windowWidth > 768 ? slide.images.hero.large : slide.images.hero.small} alt={slide.name} bsPrefix="img__hero" />

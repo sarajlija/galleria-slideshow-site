@@ -249,6 +249,9 @@ hr {
 
 /*MEDIA QUERY*/
 @media (max-width: 992px) {
+  .navbar-brand {
+    font-size: 32px;
+  }
   .carousel {
     height: auto;
     margin-top: 30px;
@@ -337,6 +340,9 @@ hr {
   }
 }
 @media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 32px;
+  }
   .card-galleria {
     margin-top: 6rem;
     width: 60%;
@@ -354,9 +360,8 @@ hr {
   .card__name {
     width: 280px;
     font-size: 24px;
-    height: fit-content;
     left: 0;
-    top: 40%;
+    top: inherit;
     padding: 24px;
   }
   .card__name h1 {
@@ -365,5 +370,9 @@ hr {
   .img__artist-fluid {
     position: relative;
     margin: 0;
+  }
+  .btn-dark {
+    top: 15px;
+    bottom: inherit;
   }
 }
