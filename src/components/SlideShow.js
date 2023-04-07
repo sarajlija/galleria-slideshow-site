@@ -8,7 +8,7 @@ function SlideShow() {
   const { show, handleClose, handleShow, selectedSlide, windowWidth, breakpointColumnsObj } = useGlobalContext()
 
   return (
-    <Carousel className="text-dark mb-5" interval={null}>
+    <Carousel className="text-dark mb-5 " interval={null}>
       {dataslideshow.map(slide => (
         <Carousel.Item key={slide.images.gallery} className="">
           <Row>
@@ -20,11 +20,9 @@ function SlideShow() {
                 view image
               </Button>{" "}
               <Card className="border-0" bsPrefix="card__name">
+                <h1 className="text-dark">{slide.name}</h1>
                 <Card.Body>
-                  <Card.Title className=" text-dark " bsPrefix="">
-                    {slide.name}
-                  </Card.Title>
-                  <Card.Text className=" text-dark ">{slide.artist.name}</Card.Text>
+                  <Card.Text bsPrefix="card-text__text">{slide.artist.name}</Card.Text>
                 </Card.Body>
               </Card>{" "}
               {selectedSlide && (
